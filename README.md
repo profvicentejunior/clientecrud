@@ -517,6 +517,37 @@ ANALISAR
 MELHORAR
 ```
 
+## Análise de Qualidade com SonarQube
+
+Com o SonarQube executando localmente, utilize o Maven para realizar a análise de qualidade do projeto.
+
+Na raiz do projeto, onde está localizado o arquivo `pom.xml`, execute:
+
+```bash
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=clientecrud \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=SEU_TOKEN_AQUI
+```
+
+Substitua `SEU_TOKEN_AQUI` pelo token gerado no SonarQube.
+
+Após a conclusão da análise, acesse o SonarQube em:
+
+`http://localhost:9000`
+
+No dashboard do projeto **clientecrud**, poderão ser analisados indicadores como:
+
+- Reliability
+- Security
+- Maintainability
+- Code Smells
+- Security Hotspots
+- Coverage
+- Duplications
+
+> **Importante:** nunca publique o token do SonarQube no GitHub. Utilize o token acima apenas como exemplo na documentação.
+
 ---
 
 # Professor
