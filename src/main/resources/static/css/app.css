@@ -1,0 +1,352 @@
+:root {
+
+    --primary: #5b5bd6;
+    --primary-dark: #4545b8;
+
+    --background: #f4f6fa;
+
+    --card-border: #e9ecf1;
+
+    --text-main: #252a34;
+    --text-muted: #747b88;
+}
+
+
+/* =========================================================
+   GERAL
+========================================================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+
+    background-color: var(--background);
+
+    color: var(--text-main);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar-custom {
+
+    background:
+        linear-gradient(
+            90deg,
+            #28284d,
+            #3c3c78
+        );
+
+    min-height: 68px;
+}
+
+.navbar-brand {
+
+    font-size: 1.2rem;
+    letter-spacing: .2px;
+}
+
+.navbar-custom .nav-link {
+
+    color: rgba(255,255,255,.8);
+
+    margin-left: 8px;
+
+    border-radius: 7px;
+
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.10);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+
+    background: white;
+
+    border-bottom:
+        1px solid #e9ecf1;
+
+    padding:
+        30px 0;
+}
+
+.page-header h1 {
+
+    font-size: 1.8rem;
+}
+
+.breadcrumb-custom {
+
+    color: var(--primary);
+
+    font-size: .87rem;
+
+    font-weight: 600;
+}
+
+.header-icon {
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(91, 91, 214, .10);
+
+    color: var(--primary);
+
+    font-size: 1.8rem;
+
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.app-card {
+
+    border:
+        1px solid var(--card-border);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(30, 40, 60, .05);
+
+    overflow: hidden;
+}
+
+.card-header-custom {
+
+    background: white;
+
+    padding: 20px 24px;
+
+    border-bottom:
+        1px solid var(--card-border);
+}
+
+.card-icon {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(91, 91, 214, .10);
+
+    color: var(--primary);
+
+    font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.form-label {
+
+    font-size: .9rem;
+}
+
+.form-control {
+
+    min-height: 45px;
+
+    border-radius: 9px;
+
+    border-color: #dce0e6;
+}
+
+.form-control:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 .2rem
+        rgba(91,91,214,.12);
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn {
+
+    border-radius: 8px;
+
+    font-weight: 500;
+}
+
+.btn-primary {
+
+    background-color:
+        var(--primary);
+
+    border-color:
+        var(--primary);
+}
+
+.btn-primary:hover {
+
+    background-color:
+        var(--primary-dark);
+
+    border-color:
+        var(--primary-dark);
+}
+
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.table thead th {
+
+    background: #f8f9fc;
+
+    color: #687080;
+
+    text-transform: uppercase;
+
+    font-size: .75rem;
+
+    letter-spacing: .04rem;
+
+    border-bottom:
+        1px solid #e6e9ef;
+
+    padding: 15px 18px;
+}
+
+.table tbody td {
+
+    padding: 15px 18px;
+
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+
+    background-color:
+        rgba(91,91,214,.035);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 55px 20px;
+
+    color: var(--text-muted);
+}
+
+.empty-state i {
+
+    display: block;
+
+    font-size: 3rem;
+
+    color: #b4b8c2;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+#toast-container > div {
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 6px 25px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    margin-top: 50px !important;
+
+    background: #28284d;
+
+    color: rgba(255,255,255,.85);
+
+    padding: 25px 0;
+}
+
+.footer-small {
+
+    font-size: .82rem;
+
+    color:
+        rgba(255,255,255,.55);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width: 768px) {
+
+    .header-icon {
+        display: none;
+    }
+
+    .page-header {
+        padding: 22px 0;
+    }
+
+}

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Gestão de Clientes</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="/proxy/8081/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Toastr -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- CSS da aplicação -->
+    <link rel="stylesheet"
+          href="/proxy/8081/css/app.css">
+</head>
+
+<body>
+
+<!-- ====================================================== -->
+<!-- MENU SUPERIOR -->
+<!-- ====================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-building me-2"></i>
+            Sistema Corporativo
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="menuPrincipal">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-house-door me-1"></i>
+                        Início
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle active"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+
+                        <i class="bi bi-folder me-1"></i>
+                        Cadastros
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item active"
+                               href="#">
+                                <i class="bi bi-people me-2"></i>
+                                Clientes
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ====================================================== -->
+<!-- CABEÇALHO DA PÁGINA -->
+<!-- ====================================================== -->
+
+<header class="page-header">
+
+    <div class="container">
+
+        <div class="d-flex
+                    justify-content-between
+                    align-items-center
+                    flex-wrap">
+
+            <div>
+
+                <div class="breadcrumb-custom mb-2">
+                    Cadastros
+                    <i class="bi bi-chevron-right mx-1"></i>
+                    Clientes
+                </div>
+
+                <h1 class="fw-bold mb-1">
+                    Gestão de Clientes
+                </h1>
+
+                <p class="text-muted mb-0">
+                    Cadastre, consulte, edite e remova clientes do sistema.
+                </p>
+
+            </div>
+
+            <div class="header-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ====================================================== -->
+<!-- CONTEÚDO -->
+<!-- ====================================================== -->
+
+<main class="container my-4">
+
+    <div class="row g-4">
+
+
+        <!-- ================================================= -->
+        <!-- FORMULÁRIO -->
+        <!-- ================================================= -->
+
+        <div class="col-lg-4">
+
+            <div class="card app-card h-100">
+
+                <div class="card-header-custom">
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="card-icon me-3">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+
+                        <div>
+                            <h5 id="tituloFormulario"
+                                class="mb-0 fw-bold">
+                                Novo Cliente
+                            </h5>
+
+                            <small class="text-muted">
+                                Preencha os dados abaixo
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body p-4">
+
+                    <input type="hidden"
+                           id="clienteId">
+
+
+                    <!-- NOME -->
+
+                    <div class="mb-3">
+
+                        <label for="nome"
+                               class="form-label fw-semibold">
+
+                            <i class="bi bi-person me-1"></i>
+                            Nome
+                        </label>
+
+                        <input id="nome"
+                               type="text"
+                               class="form-control"
+                               placeholder="Nome completo"
+                               autocomplete="off">
+
+                        <div id="erroNome"
+                             class="invalid-feedback">
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="mb-3">
+
+                        <label for="email"
+                               class="form-label fw-semibold">
+
+                            <i class="bi bi-envelope me-1"></i>
+                            E-mail
+                        </label>
+
+                        <input id="email"
+                               type="email"
+                               class="form-control"
+                               placeholder="cliente@email.com"
+                               autocomplete="off">
+
+                        <div id="erroEmail"
+                             class="invalid-feedback">
+                        </div>
+
+                    </div>
+
+
+                    <!-- CPF -->
+
+                    <div class="mb-3">
+
+                        <label for="cpf"
+                               class="form-label fw-semibold">
+
+                            <i class="bi bi-card-text me-1"></i>
+                            CPF
+                        </label>
+
+                        <input id="cpf"
+                               type="text"
+                               class="form-control"
+                               placeholder="000.000.000-00"
+                               autocomplete="off">
+
+                        <div id="erroCpf"
+                             class="invalid-feedback">
+                        </div>
+
+                    </div>
+
+
+                    <!-- TELEFONE -->
+
+                    <div class="mb-4">
+
+                        <label for="telefone"
+                               class="form-label fw-semibold">
+
+                            <i class="bi bi-telephone me-1"></i>
+                            Telefone
+                        </label>
+
+                        <input id="telefone"
+                               type="text"
+                               class="form-control"
+                               placeholder="(85) 99999-9999"
+                               autocomplete="off">
+
+                    </div>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="d-grid gap-2">
+
+                        <button id="btnSalvar"
+                                class="btn btn-primary btn-lg">
+
+                            <i class="bi bi-check-circle me-2"></i>
+                            Salvar Cliente
+
+                        </button>
+
+                        <button id="btnCancelar"
+                                class="btn btn-outline-secondary d-none">
+
+                            <i class="bi bi-x-circle me-2"></i>
+                            Cancelar edição
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- LISTAGEM -->
+        <!-- ================================================= -->
+
+        <div class="col-lg-8">
+
+            <div class="card app-card">
+
+                <div class="card-header-custom">
+
+                    <div class="d-flex
+                                justify-content-between
+                                align-items-center">
+
+                        <div class="d-flex align-items-center">
+
+                            <div class="card-icon me-3">
+                                <i class="bi bi-list-ul"></i>
+                            </div>
+
+                            <div>
+
+                                <h5 class="mb-0 fw-bold">
+                                    Clientes Cadastrados
+                                </h5>
+
+                                <small class="text-muted">
+                                    Consulte e gerencie os registros
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <button id="btnAtualizarLista"
+                                class="btn btn-outline-primary">
+
+                            <i class="bi bi-arrow-clockwise me-1"></i>
+                            Atualizar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-body p-0">
+
+                    <div class="table-responsive">
+
+                        <table id="tabelaClientes"
+                               class="table table-hover align-middle mb-0">
+
+                            <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>CPF</th>
+                                <th class="text-center">
+                                    Ações
+                                </th>
+                            </tr>
+
+                            </thead>
+
+                            <tbody id="clientesBody">
+
+                            <!-- jQuery preenche aqui -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- SEM REGISTROS -->
+
+                    <div id="semClientes"
+                         class="empty-state d-none">
+
+                        <i class="bi bi-inbox"></i>
+
+                        <h5>
+                            Nenhum cliente cadastrado
+                        </h5>
+
+                        <p>
+                            Utilize o formulário para cadastrar
+                            o primeiro cliente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ====================================================== -->
+<!-- RODAPÉ -->
+<!-- ====================================================== -->
+
+<footer class="footer mt-auto">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+
+                <strong>
+                    Sistema de Gestão de Clientes
+                </strong>
+
+                <div class="footer-small">
+                    Aplicação acadêmica com Spring Boot
+                </div>
+
+            </div>
+
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+                <span>
+                    <i class="bi bi-code-slash me-1"></i>
+                    Spring Boot + jQuery
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ====================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ====================================================== -->
+
+<!-- jQuery -->
+<script src="/proxy/8081/webjars/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="/proxy/8081/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<!-- jQuery Mask -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<!-- Aplicação -->
+<script src="/proxy/8081/js/app.js"></script>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        // Máscaras
+        $("#cpf").mask("000.000.000-00");
+
+        $("#telefone").mask(
+            "(00) 00000-0000"
+        );
+
+        // Configuração do Toastr
+        toastr.options = {
+
+            closeButton: true,
+            progressBar: true,
+            newestOnTop: true,
+
+            positionClass:
+                "toast-top-right",
+
+            timeOut: 4000,
+
+            extendedTimeOut: 1000
+
+        };
+
+    });
+
+</script>
+
+</body>
+</html>

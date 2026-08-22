@@ -1,0 +1,8 @@
+br/unifametro/exception/GlobalExceptionHandler.class
+br/unifametro/config/WebConfig.class
+br/unifametro/service/ClienteService.class
+br/unifametro/model/Cliente.class
+br/unifametro/ClientesApplication.class
+br/unifametro/controller/ClienteController.class
+br/unifametro/repository/ClienteRepository.class
+br/unifametro/exception/RecursoNaoEncontradoException.class

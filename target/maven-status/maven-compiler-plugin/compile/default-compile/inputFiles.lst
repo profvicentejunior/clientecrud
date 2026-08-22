@@ -1,0 +1,8 @@
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/ClientesApplication.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/config/WebConfig.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/controller/ClienteController.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/exception/GlobalExceptionHandler.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/exception/RecursoNaoEncontradoException.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/model/Cliente.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/repository/ClienteRepository.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/main/java/br/unifametro/service/ClienteService.java
