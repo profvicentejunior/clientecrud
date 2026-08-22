@@ -1,4 +1,4 @@
-const API = "/proxy/8081/api/clientes";
+const API = "/api/clientes";
 
 $(document).ready(function () {
 
