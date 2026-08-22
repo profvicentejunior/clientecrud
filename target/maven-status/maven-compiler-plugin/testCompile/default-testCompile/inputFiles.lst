@@ -1,0 +1,4 @@
+/home/coder/Aula_Testes_JMeter/clientecrud/src/test/java/br/unifametro/controller/ClienteControllerTest.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/test/java/br/unifametro/integration/ClienteIntegracaoTest.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/test/java/br/unifametro/service/ClienteServiceTest.java
+/home/coder/Aula_Testes_JMeter/clientecrud/src/test/java/br/unifametro/smoke/ClienteSmokeTest.java

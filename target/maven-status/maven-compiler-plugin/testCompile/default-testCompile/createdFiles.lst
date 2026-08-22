@@ -1,0 +1,4 @@
+br/unifametro/controller/ClienteControllerTest.class
+br/unifametro/smoke/ClienteSmokeTest.class
+br/unifametro/integration/ClienteIntegracaoTest.class
+br/unifametro/service/ClienteServiceTest.class
